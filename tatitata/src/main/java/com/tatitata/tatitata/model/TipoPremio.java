@@ -10,18 +10,11 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
 @Builder
-public class Missao {
+@NoArgsConstructor @AllArgsConstructor
+public class TipoPremio {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    Long id;
-    String nome;
-    String descricao;
-    TipoObjetivo tipoObjetivo;
-    String objetivo;
-    Integer nivelMinimo;
-    Integer premio;
-    TipoPremio tipoPremio;
-    String ativo;
+    private Long id;
+    private String nome;
 }

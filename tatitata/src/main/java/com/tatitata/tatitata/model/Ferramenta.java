@@ -1,27 +1,27 @@
 package com.tatitata.tatitata.model;
 
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.*;
 import org.hibernate.annotations.Entity;
 import org.springframework.data.annotation.Id;
 
+import java.math.BigDecimal;
+
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
 @Builder
-public class Missao {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Ferramenta {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    Long id;
-    String nome;
-    String descricao;
-    TipoObjetivo tipoObjetivo;
-    String objetivo;
-    Integer nivelMinimo;
-    Integer premio;
-    TipoPremio tipoPremio;
-    String ativo;
+    private Long id;
+    private String nome;
+    private BigDecimal incrementoDinheiro;
+    private Integer preco;
+    private Integer nivelMinimo;
+    private String ativo;
 }

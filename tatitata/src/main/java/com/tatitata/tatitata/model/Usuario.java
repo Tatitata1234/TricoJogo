@@ -31,4 +31,14 @@ public class Usuario {
     private List<Habilidade> habilidades = new ArrayList<Habilidade>();
     @OneToMany(mappedBy = "usuario")
     private List<Missao> missoes = new ArrayList<Missao>();
+    @OneToMany(mappedBy = "usuario")
+    private List<NoveloUsuario> novelos = new ArrayList<NoveloUsuario>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Ferramenta> ferramentas = new ArrayList<Ferramenta>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Receita> receitas = new ArrayList<Receita>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Curso> cursos = new ArrayList<Curso>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Trico> tricos = new ArrayList<Trico>();
 }
