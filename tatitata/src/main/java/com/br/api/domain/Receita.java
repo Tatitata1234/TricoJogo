@@ -1,16 +1,16 @@
-package com.tatitata.tatitata.model;
+package com.br.api.domain;
 
-import jakarta.persistence.GeneratedValue;
 import lombok.*;
-import org.hibernate.annotations.Entity;
-import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import static jakarta.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Getter

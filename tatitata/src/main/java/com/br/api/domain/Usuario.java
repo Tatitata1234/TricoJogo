@@ -1,11 +1,10 @@
-package com.tatitata.tatitata.model;
+package com.br.api.domain;
 
 import lombok.*;
 import org.hibernate.annotations.Entity;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 
 import java.util.ArrayList;
