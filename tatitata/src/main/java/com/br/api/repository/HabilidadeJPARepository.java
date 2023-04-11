@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface HabilidadeJPARepository extends JpaRepository<Habilidade,Long> {
 
-    List<Habilidade> findAll();
+    List<Habilidade> findAllbyAtivoTrue();
+
+    Habilidade findByIdAndAtivoTrue(Long habilidadeId);
 }
