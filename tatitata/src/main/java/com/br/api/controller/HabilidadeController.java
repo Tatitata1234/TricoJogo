@@ -20,7 +20,7 @@ public class HabilidadeController {
     private ListarHabilidadeService listarHabilidadeService;
     @Autowired
     private DetalharHabilidadeService detalharHabilidadeService;
-    
+
     @GetMapping()
     public ResponseEntity<List<HabilidadeResponse>> listar(){
         return ResponseEntity.ok(listarHabilidadeService.listar());
