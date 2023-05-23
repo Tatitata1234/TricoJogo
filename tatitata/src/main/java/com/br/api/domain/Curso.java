@@ -19,6 +19,6 @@ public class Curso {
     @ManyToOne
     @JoinColumn(name = "tipo")
     private TipoObjetivo tipo;
-    
+
 
 }
