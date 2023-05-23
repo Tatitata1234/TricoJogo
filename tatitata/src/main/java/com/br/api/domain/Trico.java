@@ -2,9 +2,7 @@ package com.br.api.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -21,7 +19,11 @@ public class Trico {
     private String nome;
     private Integer preco;
     private String vendido;
+    @ManyToOne
+    @JoinColumn(name = "receita")
     private Receita receita;
+    @ManyToOne
+    @JoinColumn(name = "usuario")
     private Usuario usuario;
     private String ativo;
 }

@@ -2,9 +2,7 @@ package com.br.api.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -16,7 +14,11 @@ public class NoveloUsuario {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "usuario")
     private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "novelo")
     private Novelo novelo;
     private Integer tamanho;
     private String ativo;

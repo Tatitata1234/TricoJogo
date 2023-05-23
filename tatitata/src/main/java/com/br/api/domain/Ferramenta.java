@@ -27,4 +27,8 @@ public class Ferramenta {
     @JoinColumn(name = "receita")
     private Receita receita;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_ID")
+    private Usuario usuario;
+
 }

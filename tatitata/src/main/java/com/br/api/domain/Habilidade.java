@@ -20,10 +20,16 @@ public class Habilidade {
     private BigDecimal incrementoDinheiro;
     private int nivelMinimo;
     private String ativo;
+    @ManyToOne
+    @JoinColumn(name = "curso_id")
     private Curso curso;
 
     @ManyToOne
     @JoinColumn(name = "receita")
     private Receita receita;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_ID")
+    private Usuario usuario;
 
 }

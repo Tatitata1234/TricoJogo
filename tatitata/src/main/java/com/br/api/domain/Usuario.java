@@ -1,15 +1,14 @@
 package com.br.api.domain;
 
 import lombok.*;
-import org.hibernate.annotations.Entity;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -25,7 +24,9 @@ public class Usuario {
     private Integer xp;
     private Integer nivel;
     private Integer dinheiro;
-    private String ativo;
+    private boolean ativo;
+    private String email;
+    private String senha;
     @OneToMany(mappedBy = "usuario")
     private List<Habilidade> habilidades = new ArrayList<Habilidade>();
     @OneToMany(mappedBy = "usuario")
@@ -40,4 +41,11 @@ public class Usuario {
     private List<Curso> cursos = new ArrayList<Curso>();
     @OneToMany(mappedBy = "usuario")
     private List<Trico> tricos = new ArrayList<Trico>();
+    @OneToMany(mappedBy = "usuario", cascade = ALL, fetch = EAGER)
+    private List<Permissao> permissoes = new ArrayList<>();
+
+    public void adicionarPermissao(Permissao permissao) {
+        this.permissoes.add(permissao);
+        permissao.setUsuario(this);
+    }
 }

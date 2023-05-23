@@ -3,9 +3,7 @@ package com.br.api.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -19,10 +17,19 @@ public class Missao {
     Long id;
     String nome;
     String descricao;
+    @ManyToOne
+    @JoinColumn(name = "tipo_objetivo")
     TipoObjetivo tipoObjetivo;
     String objetivo;
     Integer nivelMinimo;
     Integer premio;
+    @ManyToOne
+    @JoinColumn(name = "tipo_premio")
     TipoPremio tipoPremio;
     String ativo;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_ID")
+    private Usuario usuario;
+
 }

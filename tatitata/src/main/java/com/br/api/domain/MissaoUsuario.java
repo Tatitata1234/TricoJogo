@@ -1,28 +1,26 @@
 package com.br.api.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
-public class Curso {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class MissaoUsuario {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "tipo")
-    private TipoObjetivo tipo;
-
-
-    @ManyToOne
     @JoinColumn(name = "usuario")
     private Usuario usuario;
-
+    @ManyToOne
+    @JoinColumn(name = "missao")
+    private Missao missao;
+    private int progresso;
 }
